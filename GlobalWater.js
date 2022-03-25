@@ -82,12 +82,12 @@ function createPieChartSliceDictionary(fc) {
 
 // Create a dictionary for looking up names of transition classes.
 var lookup_names = ee.Dictionary.fromLists(
-    ee.List(gswold.get('transition_class_values')).map(ee.String),
+    ee.List(gswold.get('transition_class_values')).map(function(ft) { return ee.String(ft) }),
     gswold.get('transition_class_names')
 );
 // Create a dictionary for looking up colors of transition classes.
 var lookup_palette = ee.Dictionary.fromLists(
-    ee.List(gswold.get('transition_class_values')).map(ee.String),
+    ee.List(gswold.get('transition_class_values')).map(function(ft) { return ee.String(ft) }),
     gswold.get('transition_class_palette')
 );
 
